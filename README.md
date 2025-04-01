@@ -1,0 +1,2 @@
+# AI_Model_for_GNSS_StepDetection_VelocityEstimation
+StepCNN-GNSS: An
