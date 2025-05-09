@@ -5,7 +5,9 @@ gwang@uh.edu
 
 3-31-2025
 
-This paper’s programs and datasets, including a large training dataset (data.tgz) and the CNN model (StepCNN-GNSS.keras), exceed GitHub’s 25 MB file size limit. These files, essential for replicating the study, are permanently archived on the author’s research website: http://easd.geosc.uh.edu/gwang/publications.php
+This paper’s programs and datasets, including a large training dataset (data.tgz) and the CNN model (StepCNN-GNSS.keras), exceed GitHub’s 25 MB file size limit. These files, essential for replicating the study, are permanently archived on the author’s research website:
+
+http://easd.geosc.uh.edu/gwang/publications.php
 
 Abstract
 
