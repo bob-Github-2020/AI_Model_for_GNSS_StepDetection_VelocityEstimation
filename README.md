@@ -1,6 +1,8 @@
 # StepCNN-GNSS: An AI Model Enhancing Step Detection and Site Velocity Estimation from Global GNSS Data
 Guoquan Wang et al.
 
+3/15/2025
+
 gwang@uh.edu
 
 Abstract
@@ -24,12 +26,12 @@ Place the following files in your working directory:
 
 ./train/data/bad/*
 
-The training datasets (good and bad samples/plots) are included in data.tgz. You may extract the contents and explore the Python file Train_StepCNN-GNSS.py to understand the CNN training method. I have added detailed comments within the code. To train the model, simply run the Python script (Train_StepCNN-GNSS.py) on your computer.
+The training datasets (good and bad samples/plots) are included in ***data.tgz***. You may extract the contents and explore the Python file Train_StepCNN-GNSS.py to understand the CNN training method. I have added detailed comments within the code. To train the model, simply run the Python script (***Train_StepCNN-GNSS.py***) on your computer.
 
 
 # Instructions for Using the CNN Model for Step Detection and Velocity Estimation
 
-Taiwan_IGS14.tgz contains displacement time series (*.col) for numerous GPS stations in Taiwan, which can be used as sample data. Place the following files in your working directory:
+***Taiwan_IGS14.tgz*** contains displacement time series (*.col) for numerous GPS stations in Taiwan, which can be used as sample data. Place the following files in your working directory:
 
 ./GNSS_StepDetection_VelocityEstimation.py
 
@@ -37,4 +39,4 @@ Taiwan_IGS14.tgz contains displacement time series (*.col) for numerous GPS stat
 
 ./*.col (sample data)
 
-You may read the Python script GNSS_StepDetection_VelocityEstimation.py, which is written based on the methods described in the paper. I have included detailed comments within the code for clarity. You can run the script with the sample GNSS time series (*.col) on your computer. Make sure that the CNN model (StepCNN-GNSS.keras) is under your working directory.
+You may read the Python script GNSS_StepDetection_VelocityEstimation.py, which is written based on the methods described in the paper. I have included detailed comments within the code for clarity. You can run the script with the sample GNSS time series (*.col) on your computer. Make sure that the CNN model (***StepCNN-GNSS.keras***) is under your working directory.
