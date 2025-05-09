@@ -31,13 +31,6 @@ Place the following files in your working directory:
 
 The training datasets (good and bad samples/plots) are included in ***data.tgz***. You may extract the contents and explore the Python file ***Train_StepCNN-GNSS.py*** to understand the CNN training method. I have added detailed comments within the code. To train the model, simply run the Python script (***Train_StepCNN-GNSS.py***) on your computer.
 
-Examples of "good" plots:
-![final_AACR_CAB18_neu_cm_candidate_E](https://github.com/user-attachments/assets/d001b28a-ba00-4019-bbdc-2f5f06271df8)
-
-![final_BIMO_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/acb58841-309e-4e6c-93da-e5bce412b841)
-
-![final_BDRL_candidate_U](https://github.com/user-attachments/assets/30cbfbe6-27a7-48b3-a83d-e9d52f9db83b)
-
 
 <u>***Instructions for Using the CNN Model for Step Detection and Velocity Estimation***</u>
 
@@ -50,3 +43,28 @@ Examples of "good" plots:
 ./*.col (sample data)
 
 You may read the Python script ***GNSS_StepDetection_VelocityEstimation.py***, which is written based on the methods described in the paper. I have included detailed comments within the code for clarity. You can run the script with the sample GNSS time series (*.col) on your computer. Make sure that the CNN model (***StepCNN-GNSS.keras***) is under your working directory.
+
+---
+***Examples of "good" plots in training data, ./data/train/good/***
+![final_AACR_CAB18_neu_cm_candidate_E](https://github.com/user-attachments/assets/d001b28a-ba00-4019-bbdc-2f5f06271df8)
+![final_BIMO_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/acb58841-309e-4e6c-93da-e5bce412b841)
+![final_BDRL_candidate_U](https://github.com/user-attachments/assets/5346d480-14c9-4897-98a1-e01e5108652f)
+![final_BDRL_candidate_U](https://github.com/user-attachments/assets/30cbfbe6-27a7-48b3-a83d-e9d52f9db83b)
+![final_BIRC_candidate_N](https://github.com/user-attachments/assets/de0873ad-dd89-4ca7-94fd-ec9d4ec64cc5)
+![final_CHI7_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/83d5769e-84f6-448a-b59d-37832d52cc2b)
+![final_COTD_candidate_U](https://github.com/user-attachments/assets/8b898ab7-833f-438c-84d4-c699edc90e0c)
+![final_FUQE_candidate_N](https://github.com/user-attachments/assets/9850ec38-0047-42a0-946d-5d612c1ff3dc)
+
+***Examples of "bad" plots in training data, ./data/train/bad/***
+![final_AGRD_candidate_N](https://github.com/user-attachments/assets/10916597-4015-4c56-abd7-3d73d5805c91)
+![final_AMS2_candidate_U](https://github.com/user-attachments/assets/baaa588e-2e82-4e29-b48a-825104955c98)
+![final_AZPE_candidate_N](https://github.com/user-attachments/assets/41fe47e0-e14c-4d8c-8f37-2a760b0e0fff)
+![final_BATG_candidate_U](https://github.com/user-attachments/assets/c53ef0f4-1440-4a5a-a786-01b876c90f5a)
+![final_CAN3_candidate_U](https://github.com/user-attachments/assets/d71b59a6-a217-484f-97f7-60809618ef14)
+![final_CLO1_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/33a7ae52-69e2-4d3e-a838-8baa9808acfa)
+![final_G040_candidate_E](https://github.com/user-attachments/assets/d2daa353-4ee9-4a41-bd0c-63f6dbb3d52d)
+![final_G045_candidate_E](https://github.com/user-attachments/assets/bcf7a071-22cc-41a7-b175-edc035743d66)
+![final_HAV2_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/4ea86316-af68-45c6-a833-c78a4f011ef6)
+![final_S063_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/d59a1fc9-0aed-4c4f-845d-d95d365269a2)
+
+
