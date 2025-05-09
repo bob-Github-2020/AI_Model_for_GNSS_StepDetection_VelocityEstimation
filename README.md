@@ -25,13 +25,19 @@ Place the following files in your working directory:
 
 ./Train_StepCNN-GNSS.py
 
-./train/data/good/*
+./data/train/good/*
 
-./train/data/bad/*
+./data/train/bad/*
 
 The training datasets (good and bad samples/plots) are included in ***data.tgz***. You may extract the contents and explore the Python file ***Train_StepCNN-GNSS.py*** to understand the CNN training method. I have added detailed comments within the code. To train the model, simply run the Python script (***Train_StepCNN-GNSS.py***) on your computer.
 
----
+Examples of "good" plots:
+![final_AACR_CAB18_neu_cm_candidate_E](https://github.com/user-attachments/assets/d001b28a-ba00-4019-bbdc-2f5f06271df8)
+
+![final_BIMO_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/acb58841-309e-4e6c-93da-e5bce412b841)
+
+![final_BDRL_candidate_U](https://github.com/user-attachments/assets/30cbfbe6-27a7-48b3-a83d-e9d52f9db83b)
+
 
 <u>***Instructions for Using the CNN Model for Step Detection and Velocity Estimation***</u>
 
