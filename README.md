@@ -5,9 +5,18 @@ gwang@uh.edu
 
 3-31-2025
 
-This paper’s programs and datasets, including a large training dataset (data.tgz) and the CNN model (StepCNN-GNSS.keras), exceed GitHub’s 25 MB file size limit. These files, essential for replicating the study, are permanently archived on the author’s research website:
+This paper’s programs and datasets, including a large training dataset (data.tgz) and the CNN model (StepCNN-GNSS.keras), exceed GitHub’s 25 MB file size limit. These two files, essential for replicating the study, are permanently archived on the author’s research website:
 
 http://easd.geosc.uh.edu/gwang/publications.php
+
+Instructure for understainding and retraining the CNN model:
+Put following files under your working directory:
+./Train_StepCNN-GNSS.py
+./Train/Data/good/*
+./Train/Data/bad/*
+The good and bad training data/plots are enclosed in data.tgz. You may open the Python file Train_StepCNN-GNSS.py to understand the CNN training method. I add detailed comments innside the program. For training the model, just run the Python program on your computer
+
+Instruction for 
 
 Abstract
 
