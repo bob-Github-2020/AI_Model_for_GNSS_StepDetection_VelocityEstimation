@@ -19,7 +19,7 @@ http://easd.geosc.uh.edu/gwang/publications.php
 
 ---
 
-<u>**Instructions for Understanding and Retraining the CNN Model**</u>
+<u>***Instructions for Understanding and Retraining the CNN Model***</u>
 
 Place the following files in your working directory:
 
@@ -33,7 +33,7 @@ The training datasets (good and bad samples/plots) are included in ***data.tgz**
 
 ---
 
-<u>**Instructions for Using the CNN Model for Step Detection and Velocity Estimation**</u>
+<u>***Instructions for Using the CNN Model for Step Detection and Velocity Estimation***</u>
 
 ***Taiwan_IGS14.tgz*** contains displacement time series (*.col) for numerous GPS stations in Taiwan, which can be used as sample data (displacement time series). Place the following files in your working directory:
 
