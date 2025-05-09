@@ -31,6 +31,7 @@ Place the following files in your working directory:
 
 The training datasets (good and bad samples/plots) are included in ***data.tgz***. You may extract the contents and explore the Python file ***Train_StepCNN-GNSS.py*** to understand the CNN training method. I have added detailed comments within the code. To train the model, simply run the Python script (***Train_StepCNN-GNSS.py***) on your computer.
 
+---
 
 <u>***Instructions for Using the CNN Model for Step Detection and Velocity Estimation***</u>
 
@@ -45,11 +46,11 @@ The training datasets (good and bad samples/plots) are included in ***data.tgz**
 You may read the Python script ***GNSS_StepDetection_VelocityEstimation.py***, which is written based on the methods described in the paper. I have included detailed comments within the code for clarity. You can run the script with the sample GNSS time series (*.col) on your computer. Make sure that the CNN model (***StepCNN-GNSS.keras***) is under your working directory.
 
 ---
+
 ***Examples of "good" plots in training data, ./data/train/good/***
 ![final_AACR_CAB18_neu_cm_candidate_E](https://github.com/user-attachments/assets/d001b28a-ba00-4019-bbdc-2f5f06271df8)
 ![final_BIMO_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/acb58841-309e-4e6c-93da-e5bce412b841)
 ![final_BDRL_candidate_U](https://github.com/user-attachments/assets/5346d480-14c9-4897-98a1-e01e5108652f)
-![final_BDRL_candidate_U](https://github.com/user-attachments/assets/30cbfbe6-27a7-48b3-a83d-e9d52f9db83b)
 ![final_BIRC_candidate_N](https://github.com/user-attachments/assets/de0873ad-dd89-4ca7-94fd-ec9d4ec64cc5)
 ![final_CHI7_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/83d5769e-84f6-448a-b59d-37832d52cc2b)
 ![final_COTD_candidate_U](https://github.com/user-attachments/assets/8b898ab7-833f-438c-84d4-c699edc90e0c)
