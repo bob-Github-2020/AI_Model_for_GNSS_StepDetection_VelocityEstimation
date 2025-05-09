@@ -10,7 +10,7 @@ Estimating long-term site velocities from Global Navigation Satellite System (GN
 
 # Programs and Datasets
 
-This paper's programs and datasets, including a large training dataset (data.tgz) and the CNN model (StepCNN-GNSS.keras), exceed GitHub's 25 MB file size limit. These two files, essential for replicating the study, are permanently archived on the author’s research website:
+This paper's programs and datasets, including a large training dataset (***data.tgz***) and the CNN model (***StepCNN-GNSS.keras***), exceed GitHub's 25 MB file size limit. These two files, essential for replicating the study, are permanently archived on the author’s research website:
 
 http://easd.geosc.uh.edu/gwang/publications.php
 
