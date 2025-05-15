@@ -8,7 +8,7 @@ Description:
 
 Dependencies:
     - Python 3.9+
-    - TensorFlow 2.15.x (or higher)
+    - TensorFlow 2.15.0 (or higher)
     - Please check the specific versions of Python and TensofrFlow used for trainning the CNN model (StepCNN-GNSS.keras)
     - NumPy
     - Pandas
