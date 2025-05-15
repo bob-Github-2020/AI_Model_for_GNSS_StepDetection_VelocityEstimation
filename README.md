@@ -38,7 +38,7 @@ TensorFlow > 2.15.0 (may cause loading errors)
 
 **Quick Start For Installing Python and TensorFlow**
 
-<u》Install Python 3.10 (Recommended)《/u》
+<u>**Install Python 3.10 (Recommended)**</u>
 
 Download and install Python 3.10 from python.org.
 
@@ -46,7 +46,7 @@ During installation:
 
 Check ✅ "Add Python to PATH".
 
-<u>Install TensorFlow 2.15.0</u>
+<u>**Install TensorFlow 2.15.0**</u>
 
 ***pip install tensorflow==2.15.0***
 
