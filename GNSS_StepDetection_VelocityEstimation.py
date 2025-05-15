@@ -2,13 +2,14 @@
 """
 Title: GNSS Step Detection and Velocity Estimation with CNN (Main Program)
 Author: Guoquan Wang, et al., gwang@uh.edu
-Date: March 28, 2025
+Date: May 15 2025
 Description:
     This script processes GNSS time series data to estimate site velocities by detecting and handling steps (abrupt and slow) in the North (N), East (E), and Up (U) directions. It integrates a pre-trained Convolutional Neural Network (CNN) model (based on VGG16) to optimize small-step detection parameters, ensuring robust velocity estimates. The pipeline includes outlier removal, step detection (using sliding windows and cubic fitting for slow steps), velocity calculation, and visualization of results. The script is designed for ~13,000 global GNSS stations and supports studies of tectonic motion and hazard assessment.
 
 Dependencies:
-    - Python 3.6+
-    - TensorFlow 2.6+
+    - Python 3.9+
+    - TensorFlow 2.15.x (or higher)
+    - Please check the specific versions of Python and TensofrFlow used for trainning the CNN model (StepCNN-GNSS.keras)
     - NumPy
     - Pandas
     - Matplotlib
@@ -20,7 +21,7 @@ Dependencies:
     - Pre-trained CNN model: step_detection_CNN_VGG16_224by224_2phases_v5.keras
 
 Usage:
-    1. Place GNSS time series files (*_IGS14_NEU_cm.col) in the working directory.
+    1. Place GNSS time series files (*cm.col) in the working directory.
     2. Ensure the pre-trained CNN model (StepCNN-GNSS.keras) is in the working directory.
     3. Run the script: `python3 GNSS_StepDetection_VelocityEstimation.py`
     4. Outputs per station:
