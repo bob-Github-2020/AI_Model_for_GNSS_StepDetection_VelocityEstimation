@@ -36,9 +36,9 @@ Python ≥ 3.12 (incompatible with TensorFlow 2.15.0)
 TensorFlow > 2.15.0 (may cause loading errors)
 
 
-Quick Start For Installing Python and TensorFlow
+**Quick Start For Installing Python and TensorFlow**
 
-Install Python 3.10 (Recommended)
+<u》Install Python 3.10 (Recommended)《/u》
 
 Download and install Python 3.10 from python.org.
 
@@ -46,13 +46,14 @@ During installation:
 
 Check ✅ "Add Python to PATH".
 
-Install TensorFlow 2.15.0
+<u>Install TensorFlow 2.15.0</u>
 
-pip install tensorflow==2.15.0
+***pip install tensorflow==2.15.0***
 
 
 For Users with Higher Python/TensorFlow Versions
-If your system has Python ≥ 3.12 or TensorFlow > 2.15.0, you may need to retrain the CNN model on your computer. Please read the details in Train_StepCNN-GNSS.py
+
+If your system has Python ≥ 3.12 or TensorFlow > 2.15.0, you may need to retrain the CNN model on your computer. Please read the details in ***Train_StepCNN-GNSS.py***
 
 ---
 
