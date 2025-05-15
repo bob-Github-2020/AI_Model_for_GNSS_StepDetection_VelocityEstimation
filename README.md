@@ -19,6 +19,43 @@ http://easd.geosc.uh.edu/gwang/publications.php
 
 ---
 
+**StepCNN-GNSS Model Usage Guide**
+
+Compatibility Requirements
+
+✅ Supported:
+
+Python: 3.8.x, 3.9.x, 3.10.x
+
+TensorFlow: 2.15.0
+
+❌ Not Supported:
+
+Python ≥ 3.12 (incompatible with TensorFlow 2.15.0)
+
+TensorFlow > 2.15.0 (may cause loading errors)
+
+
+Quick Start For Installing Python and TensorFlow
+
+Install Python 3.10 (Recommended)
+
+Download and install Python 3.10 from python.org.
+
+During installation:
+
+Check ✅ "Add Python to PATH".
+
+Install TensorFlow 2.15.0
+
+pip install tensorflow==2.15.0
+
+
+For Users with Higher Python/TensorFlow Versions
+If your system has Python ≥ 3.12 or TensorFlow > 2.15.0, you may need to retrain the CNN model on your computer. Please read the details in Train_StepCNN-GNSS.py
+
+---
+
 <u>***Instructions for Understanding and Retraining the CNN Model***</u>
 
 Place the following files in your working directory:
