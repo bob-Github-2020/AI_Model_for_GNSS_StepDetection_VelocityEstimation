@@ -15,7 +15,9 @@ Estimating long-term site velocities from Global Navigation Satellite System (GN
 
 This paper's programs and datasets, including a large training dataset (***data.tgz***) and the CNN model (***StepCNN-GNSS_TS2p15p0.keras*** and ***StepCNN-GNSS_TS2p19p0.keras*** ), exceed GitHub's 25 MB file size limit. These files, essential for replicating the study, are permanently archived on the author’s research website:
 http://easd.geosc.uh.edu/gwang/publications.php
+
 The trained CNN model may be version-specific to TensorFlow. ***StepCNN-GNSS_TS2p15p0.keras*** was trained using TensorFlow 2.15.0, and ***StepCNN-GNSS_TS2p19p0.keras*** was trained on TensorFlow 2.19.0. 
+
 ---
 
 **StepCNN-GNSS Model Usage Guide**
@@ -25,9 +27,11 @@ Compatibility Requirements
 ✅ Supported:
 
 StepCNN-GNSS.TS2p15p0.keras:
+
 Python: 3.8.x, 3.9.x, 3.10.x; TensorFlow: 2.15.0
 
 StepCNN-GNSS.TS2p19p0.keras:
+
 Python: 3.11.x, 3.12.x, 3.13.x; TensorFlow: 2.19.0
 
 **Quick Start For Installing Python and TensorFlow**
@@ -40,7 +44,7 @@ During installation:
 
 Check ✅ "Add Python to PATH".
 
-For installing specific version of TensorFlow, you may use:
+For installing specific version of TensorFlow, you may use (for example):
 
 <u>**Install TensorFlow 2.15.0**</u>
 
@@ -49,9 +53,7 @@ For installing specific version of TensorFlow, you may use:
 
 For Users with Higher Python/TensorFlow Versions
 
-If your system has different version of TensorFlow or has any issues in loading the model, you may need to retrain the CNN model on your computer.
-
-Please read the details in ***Train_StepCNN-GNSS.py***
+If your system has different version of TensorFlow or has any issues in loading the model, you may need to retrain the CNN model on your computer. Please read the details in ***Train_StepCNN-GNSS.py***
 
 ---
 
