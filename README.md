@@ -1,7 +1,7 @@
 # StepCNN-GNSS: An AI Model Enhancing Step Detection and Site Velocity Estimation from Global GNSS Data
 Guoquan Wang et al.
 
-3/15/2025
+5/20/2025
 
 gwang@uh.edu
 
@@ -13,10 +13,9 @@ Estimating long-term site velocities from Global Navigation Satellite System (GN
 
 **Programs and Datasets**
 
-This paper's programs and datasets, including a large training dataset (***data.tgz***) and the CNN model (***StepCNN-GNSS.keras***), exceed GitHub's 25 MB file size limit. These two files, essential for replicating the study, are permanently archived on the author’s research website:
-
+This paper's programs and datasets, including a large training dataset (***data.tgz***) and the CNN model (***StepCNN-GNSS_TS2p15p0.keras*** and ***StepCNN-GNSS_TS2p19p0.keras*** ), exceed GitHub's 25 MB file size limit. These files, essential for replicating the study, are permanently archived on the author’s research website:
 http://easd.geosc.uh.edu/gwang/publications.php
-
+The trained CNN model may be version-specific to TensorFlow. ***StepCNN-GNSS_TS2p15p0.keras*** was trained using TensorFlow 2.15.0, and ***StepCNN-GNSS_TS2p19p0.keras*** was trained on TensorFlow 2.19.0. 
 ---
 
 **StepCNN-GNSS Model Usage Guide**
@@ -25,26 +24,23 @@ Compatibility Requirements
 
 ✅ Supported:
 
-Python: 3.8.x, 3.9.x, 3.10.x
+StepCNN-GNSS.TS2p15p0.keras:
+Python: 3.8.x, 3.9.x, 3.10.x; TensorFlow: 2.15.0
 
-TensorFlow: 2.15.0
-
-❌ Not Supported:
-
-Python ≥ 3.12 (incompatible with TensorFlow 2.15.0)
-
-TensorFlow > 2.15.0 (may cause loading errors)
-
+StepCNN-GNSS.TS2p19p0.keras:
+Python: 3.11.x, 3.12.x, 3.13.x; TensorFlow: 2.19.0
 
 **Quick Start For Installing Python and TensorFlow**
 
-<u>**Install Python 3.10 (Recommended)**</u>
+<u>**Install Python 3.10.x or higher (Recommended)**</u>
 
-Download and install Python 3.10 from python.org.
+Download and install Python 3.x from python.org.
 
 During installation:
 
 Check ✅ "Add Python to PATH".
+
+For installing specific version of TensorFlow, you may use:
 
 <u>**Install TensorFlow 2.15.0**</u>
 
@@ -53,7 +49,9 @@ Check ✅ "Add Python to PATH".
 
 For Users with Higher Python/TensorFlow Versions
 
-If your system has Python ≥ 3.12 or TensorFlow > 2.15.0, you may need to retrain the CNN model on your computer. Please read the details in ***Train_StepCNN-GNSS.py***
+If your system has different version of TensorFlow or has any issues in loading the model, you may need to retrain the CNN model on your computer.
+
+Please read the details in ***Train_StepCNN-GNSS.py***
 
 ---
 
