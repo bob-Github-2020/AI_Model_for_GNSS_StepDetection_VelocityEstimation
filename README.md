@@ -26,29 +26,29 @@ Compatibility Requirements
 
 ✅ Supported:
 
-StepCNN-GNSS.TS2p15p0.keras:
+StepCNN-GNSS_TS2p15p0.keras:
 
-Python: 3.8.x, 3.9.x, 3.10.x; TensorFlow: 2.15.0
+    Python: 3.8.x, 3.9.x, 3.10.x; TensorFlow: 2.15.0
 
-StepCNN-GNSS.TS2p19p0.keras:
+StepCNN-GNSS_TS2p19p0.keras:
 
-Python: 3.11.x, 3.12.x, 3.13.x; TensorFlow: 2.19.0
+    Python: 3.11.x, 3.12.x, 3.13.x; TensorFlow: 2.19.0
 
 **Quick Start For Installing Python and TensorFlow**
 
 <u>**Install Python 3.10.x or higher (Recommended)**</u>
 
-Download and install Python 3.x from python.org.
+    Download and install Python 3.x from python.org.
 
-During installation:
+    During installation:
 
-Check ✅ "Add Python to PATH".
+    Check ✅ "Add Python to PATH".
 
 For installing specific version of TensorFlow, you may use (for example):
 
-<u>**Install TensorFlow 2.15.0**</u>
+    <u>**Install TensorFlow 2.15.0**</u>
 
-***pip install tensorflow==2.15.0***
+    ***pip install tensorflow==2.15.0***
 
 
 For Users with Higher Python/TensorFlow Versions
