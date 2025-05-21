@@ -2,33 +2,47 @@
 """
 Title: StepCNN-GNSS: Step Detection CNN Training for GNSS Velocity Estimation
 Author: Guoquan Wang, et al., gwang@uh.edu
-Last updated: May 15, 2025
+Last updated: May 20, 2025
 Description:
     This script trains a Convolutional Neural Network (CNN) based on the VGG16 architecture to classify GNSS step-detection plots as "good" (suitable for velocity estimation) or "bad" (unsuitable due to steps or noise). The model is trained in two phases: first, with the VGG16 base layers frozen to train custom top layers, and second, fine-tuning the top VGG16 layers for improved performance. The trained model outputs a probability score (0–1) indicating the suitability of a plot for velocity estimation, which is used in the GNSS_StepDetection_VelocityEstimation.py pipeline to select optimal step-detection configurations for ~13,000 global GNSS stations.
 
 Dependencies:
-    - Python 3.9.x, 3.10.x (You may try higher versions on your computer)
-    - TensorFlow 2.15.0 (You may try higher versions on your computer)
-    - Please specify the versions of Python and TensorFlow for the final model, StepCNN-GNSS.py
+    - Python 3.8+
+    - TensorFlow 2.15.0 or higher (version-sensitive).
     - NumPy
     - scikit-learn
-    - A dataset of labeled step-detection plots (224x224 pixels) in the format: data/train/[good|bad]/*.png
-    
+    - Many other Python packages
+
+Important Versioning Notes:
+    1. Model Compatibility:
+        - The trained model is version-specific to TensorFlow
+        - Always specify the exact TensorFlow version used for training (e.g., 2.15.0, 2.19.0).
+          You may use "pip show tensorflow" to check the version on your computer.
+      
+    2. Usage Recommendation:
+        - For optimal results, use the same TensorFlow version
+          that was used during model training
+        - Version mismatches may cause unexpected behavior
+ 
 Usage:
     1. Organize your dataset in the following structure:
-       ./data/train/good/*.png  # plot with good/correct step detection
-       ./data/train/bad/*.png   # Plots with bad/incorrect step detection
+       ./data/train/good/*.png  # Step detection plots suitable for velocity estimation
+       ./data/train/bad/*.png   # Step detection plots unsuitable for velocity estimation
+       You may download the training data at (dat.tgz): 
+       http://easd.geosc.uh.edu/gwang/publications.php
+
     2. Adjust hyperparameters (e.g., batch_size, epochs, learning rates) as needed.
     3. Run the script: `python3 Train_StepCNN-GNSS.py`
-    4. The trained model will be saved as 'StepCNN-GNSS.keras'.
+    4. The trained model will be saved as 'StepCNN-GNSS.keras' (Line 186). You may rename it.
 
 Output:
     - A trained model file: StepCNN-GNSS.keras
     - Training summary with validation accuracy and loss for both phases
 
 Notes:
-     - The model is designed for binary classification but outputs a probability score, allowing users to rank candidate plots and select the best configuration for velocity estimation.
-    - For more details, see the associated manuscript: [Insert manuscript reference or link].
+    - The model is designed for binary classification but outputs a probability score, allowing users to rank candidate plots and select the best configuration for velocity estimation.
+    - For how to use this model, please read the line 1395:  cnn_model = tf.keras.models.load_model("StepCNN-GNSS.keras")
+      in GNSS_StepDetection_VelocityEstimation.py 
 """
 
 import tensorflow as tf

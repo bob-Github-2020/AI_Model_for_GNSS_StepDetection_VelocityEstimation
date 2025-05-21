@@ -1,43 +1,54 @@
 #!/usr/bin/python3
 """
-Title: GNSS Step Detection and Velocity Estimation with CNN (Main Program)
-Author: Guoquan Wang, et al., gwang@uh.edu
-Date: May 15 2025
-Description:
-    This script processes GNSS time series data to estimate site velocities by detecting and handling steps (abrupt and slow) in the North (N), East (E), and Up (U) directions. It integrates a pre-trained Convolutional Neural Network (CNN) model (based on VGG16) to optimize small-step detection parameters, ensuring robust velocity estimates. The pipeline includes outlier removal, step detection (using sliding windows and cubic fitting for slow steps), velocity calculation, and visualization of results. The script is designed for ~13,000 global GNSS stations and supports studies of tectonic motion and hazard assessment.
+GNSS Step Detection and Velocity Estimation with CNN
 
-Dependencies:
-    - Python 3.9+
-    - TensorFlow 2.15.0 (or higher)
-    - Please check the specific versions of Python and TensofrFlow used for trainning the CNN model (StepCNN-GNSS.keras)
-    - NumPy
-    - Pandas
-    - Matplotlib
-    - SciPy
-    - ruptures (for change point detection)
-    - joblib (optional, for XGBoost if used)
-    - Pillow (PIL)
-    - Input data: GNSS time series files in the format *_IGS14_NEU_cm.col (e.g., P646_IGS14_NEU_cm.col)
-    - Pre-trained CNN model: step_detection_CNN_VGG16_224by224_2phases_v5.keras
+Author: Guoquan Wang, et al. (gwang@uh.edu)
+Date: May 20, 2025
 
-Usage:
-    1. Place GNSS time series files (*cm.col) in the working directory.
-    2. Ensure the pre-trained CNN model (StepCNN-GNSS.keras) is in the working directory.
-    3. Run the script: `python3 GNSS_StepDetection_VelocityEstimation.py`
-    4. Outputs per station:
-       - Velocity file: <station>_Velocity.txt (e.g., P646_Velocity.txt)
-       - AI parameters file: <station>_AI_parameters.csv (e.g., P646_AI_parameters.csv)
-       - Plots: <station>.png (time series with velocity trend), <station>_detrended.png (detrended series with steps)
+DESCRIPTION:
+Implements a CNN-enhanced pipeline for processing GNSS time series data to:
+1. Detect steps (abrupt and slow) in N/E/U components
+2. Estimate site velocities using 4+ year step-free segment
+3. Generate diagnostic outputs for tectonic motion analysis
 
-Output Format (Velocity File):
-    - Columns: Station Vel_N(mm/yr) Vel_E(mm/yr) Vel_U(mm/yr) Dur_N Dur_E Dur_U S_begin_N S_end_N S_begin_E S_end_E S_begin_U S_end_U W_begin W_end W_Du
-    - Velocities are in mm/yr; durations are in years; S_begin/end are segment start/end years; W_begin/end/Du are whole-series bounds and duration.
+DEPENDENCIES:
+- Python 3.8+ (Note: TF 2.15.0 incompatible with Python ≥3.11)
+- Core: TensorFlow (2.15.0 or 2.19.0), NumPy, Pandas, Matplotlib, SciPy
+- Optional: ruptures (change point detection), joblib, Pillow
+- Input: GNSS *.col files (e.g., P646_IGS14_NEU_cm.col)
+- Model: Pre-trained StepCNN-GNSS.keras (VGG16-based)
+    The model is loaded in Line 1414 (You may adjust the name of the model):
+    cnn_model = tf.keras.models.load_model("StepCNN-GNSS.keras")
 
-Notes:
-    - The script uses a hybrid step detection approach: sliding windows for abrupt steps and cubic fitting for slow steps, optimized by the CNN.
-    - Memory management is implemented with garbage collection (gc.collect()) and TensorFlow session clearing to handle large datasets.
-    - Outlier removal uses iterative detrending and sigma-based filtering to ensure data quality.
-    - For more details, see the associated manuscript: [Insert manuscript reference or link].
+MODEL REQUIREMENTS:
+1. Version Compatibility:
+   - Models available for TensorFlow 2.15.0/2.19.0 at:
+     http://easd.geosc.uh.edu/gwang/publications.php
+   - Verify version on your computer with: `pip show tensorflow`
+   - Retrain if needed (see Train_StepCNN-GNSS.py)
+
+2. Best Practices:
+   - Match TensorFlow training/inference versions
+   - Version mismatches may cause unexpected behavior    
+
+USAGE:
+1. Prepare working directory with:
+   - GNSS *.col files
+   - StepCNN-GNSS.keras model
+2. Execute: `python3 GNSS_StepDetection_VelocityEstimation.py`
+3. Outputs per station:
+   - <station>_Velocity.txt (mm/yr velocities)
+   - <station>_AI_parameters.csv
+   - Diagnostic plots (*.png)
+
+OUTPUT FORMAT (Velocity File):
+Station Vel_N Vel_E Vel_U Dur_N Dur_E Dur_U S_begin_N S_end_N [...] W_Du
+(Units: mm/yr for velocities, years for durations)
+
+TECHNICAL NOTES:
+- Hybrid step detection (sliding window + cubic fitting)
+- Memory-optimized with gc.collect() and TF session management
+- Robust outlier removal via iterative detrending
 """
 
 import numpy as np
@@ -55,6 +66,7 @@ import gc
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from PIL import Image
 from matplotlib import font_manager
+from tensorflow.keras.models import load_model
 
 # Configure Matplotlib for consistent plotting (e.g., for publication in JGR)
 # Use DejaVu Sans font and ensure PDF output is compatible with publication standards.
@@ -1392,6 +1404,7 @@ if __name__ == "__main__":
     # Load the pre-trained CNN model.
     print("Loading CNN model...")
     cnn_model = tf.keras.models.load_model("StepCNN-GNSS.keras")
+    # print(cnn_model.summary())
 
     # Define fixed parameters for large step detection (included in output for reference).
     big_params = {
