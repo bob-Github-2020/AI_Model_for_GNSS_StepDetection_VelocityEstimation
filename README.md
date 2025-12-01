@@ -55,6 +55,9 @@ Place the following files in your working directory:
 
 The training datasets (good and bad samples/plots) are included in ***data.tgz***. You may extract the contents and explore the Python file ***Train_ChangePointCNN-GNSS_VGG.py*** to understand the CNN training method. I have added detailed comments within the code. To train the model, simply run the Python script (***Train_ChangePointCNN-GNSS_VGG.py***) on your computer.
 
+Download ***data.tgz*** at
+
+***https://doi.org/10.5281/zenodo.17180354***
 ---
 
 <u>***Instructions for Using the CNN Model for Step Detection and Velocity Estimation***</u>
