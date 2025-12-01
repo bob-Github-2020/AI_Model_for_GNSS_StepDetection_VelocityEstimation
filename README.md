@@ -1,38 +1,28 @@
-# StepCNN-GNSS: An AI Model Enhancing Step Detection and Site Velocity Estimation from Global GNSS Data
-Guoquan Wang et al.
+ChangePointCNN-GNSS: An AI Model for Assessing Change Points and Optimizing Site Velocity Estimation from Global GNSS Data
 
-5/20/2025
+Guoquan Wang et al.
 
 gwang@uh.edu
 
+https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JH000910
+
+
+
+
+
 **Abstract**
 
-Estimating long-term site velocities from Global Navigation Satellite System (GNSS) time series is vital for tectonic motion and hazard analysis. However, this estimation is hindered by step discontinuities caused by earthquakes, equipment changes, and other unexplained sources. Applying linear regression to entire time series often yields erroneous velocities. We propose a two-stage hybrid framework for automated step detection in GNSS-derived displacement time series. The framework integrates: (1) analytical methods, including a sliding-window algorithm for abrupt-step detection and a weighted cubic polynomial fit for gradual-step detection via curvature analysis; and (2) the artificial intelligence (AI) model StepCNN-GNSS, which quantitatively assesses step-detection quality and iteratively optimizes analytical parameters. This dual approach ensures robust step detection. The AI model is trained on a Convolutional Neural Network (CNN) using approximately 2,000 labeled plots classified as “good” if the detected steps are suitable for long-term site velocity estimation or “bad” if unsuitable. Site velocities are estimated from the longest step-free segment (minimum 4 years) of the time series, independently for each direction. The AI model can be directly applied to regional or global GNSS network data analysis, advancing automated GNSS time series analysis for interdisciplinary applications. Additionally, the training methodology and training datasets can be adapted to develop AI models suited for specific studies, such as for studying co-seismic and post-seismic displacements on regional or global scales. This study delivers reliable long-term site velocities (IGS14) for approximately 13,000 permanent GNSS stations worldwide, offering a foundational dataset for researchers in geodesy, tectonophysics, and hazard mitigation. 
+Estimating long-term site velocities from Global Navigation Satellite System (GNSS)-derived daily displacement time series is vital for studying secular tectonic motions and establishing regional and global geodetic reference frames. However, this estimation is complicated by displacements caused by earthquakes, equipment changes, hydraulic head changes, and other sources, which introduce change points in GNSS time series. This study introduces a two-stage hybrid framework for automated change-point detection in GNSS time series. The framework integrates: (1) analytical methods, including a sliding-window algorithm for instant change-point detection and a cubic polynomial fit for transitional change-point detection; and (2) an artificial intelligence (AI) model, ChangePointCNN-GNSS, which evaluates the suitability of candidate change points for site velocity estimation and iteratively optimizes analytical parameters. Unlike prior data-driven approaches, our framework leverages an image-driven method, employing a Convolutional Neural Network (CNN) to visually assess and select the most suitable change-point configuration for reliable site velocity estimation. Site velocities are computed from the longest change-point-free segment (minimum 4 years), processed independently for each station and direction. This integrated approach ensures robust site velocity estimation across large GNSS networks. The CNN is trained using approximately 6,000 time series plots with marked change points. Each plot is labeled as “good” if the detected change points are suitable for reliable site velocity estimation or “bad” if unsuitable. This study delivers long-term site velocities (IGS20) for approximately 14,600 permanent GNSS stations worldwide, with a 95% confidence interval below 1 mm/year, offering a foundational dataset for researchers in geodesy, tectonophysics, and hazard mitigation.
 
 ---
 
 **Programs and Datasets**
 
-This paper's programs and datasets, including a large training dataset (***data.tgz***) and the CNN model (***StepCNN-GNSS_TS2p15p0.keras*** and ***StepCNN-GNSS_TS2p19p0.keras*** ), exceed GitHub's 25 MB file size limit. These files, essential for replicating the study, are permanently archived on the author’s research website:
-http://easd.geosc.uh.edu/gwang/publications.php
+This paper's programs and datasets, including a large training dataset (***data.tgz***) and a trained-CNN model (***ChangePointCNN_VGG_V7.keras***), exceed GitHub's 25 MB file size limit. These files, essential for replicating the study, are permanently archived at:
 
-The trained CNN model may be version-specific to TensorFlow. ***StepCNN-GNSS_TS2p15p0.keras*** was trained using TensorFlow 2.15.0, and ***StepCNN-GNSS_TS2p19p0.keras*** was trained on TensorFlow 2.19.0. 
+https://doi.org/10.5281/zenodo.17180354
 
 ---
-
-**StepCNN-GNSS Model Usage Guide**
-
-Compatibility Requirements
-
-✅ Supported:
-
-StepCNN-GNSS_TS2p15p0.keras:
-
-    Python: 3.8.x, 3.9.x, 3.10.x; TensorFlow: 2.15.0
-
-StepCNN-GNSS_TS2p19p0.keras:
-
-    Python: 3.11.x, 3.12.x, 3.13.x; TensorFlow: 2.19.0
 
 **Quick Start For Installing Python and TensorFlow**
 
@@ -50,24 +40,21 @@ For installing specific version of TensorFlow, you may use (for example):
 
     ***pip install tensorflow==2.15.0***
 
-
-For Users with Higher Python/TensorFlow Versions
-
-If your system has different version of TensorFlow or has any issues in loading the model, you may need to retrain the CNN model on your computer. Please read the details in ***Train_StepCNN-GNSS.py***
-
 ---
+
+The trained-CNN model (ChangePointCNN_VGG_V7.keras) is version-specific to TensorFlow. I strongly suggest you train the model on your computer with the trainning program (Train_ChangePointCNN-GNSS_VGG.py) and the dataset (data.tgz). Please read the detailed instruction in ***Train_ChangePointCNN-GNSS_VGG.py***
 
 <u>***Instructions for Understanding and Retraining the CNN Model***</u>
 
 Place the following files in your working directory:
 
-./Train_StepCNN-GNSS.py
+./Train_ChangePointCNN-GNSS_VGG.py
 
 ./data/train/good/*
 
 ./data/train/bad/*
 
-The training datasets (good and bad samples/plots) are included in ***data.tgz***. You may extract the contents and explore the Python file ***Train_StepCNN-GNSS.py*** to understand the CNN training method. I have added detailed comments within the code. To train the model, simply run the Python script (***Train_StepCNN-GNSS.py***) on your computer.
+The training datasets (good and bad samples/plots) are included in ***data.tgz***. You may extract the contents and explore the Python file ***Train_ChangePointCNN-GNSS_VGG.py*** to understand the CNN training method. I have added detailed comments within the code. To train the model, simply run the Python script (***Train_ChangePointCNN-GNSS_VGG.py***) on your computer.
 
 ---
 
@@ -75,13 +62,13 @@ The training datasets (good and bad samples/plots) are included in ***data.tgz**
 
 ***Taiwan_IGS14.tgz*** contains displacement time series (*.col) for numerous GPS stations in Taiwan, which can be used as sample data (displacement time series). Place the following files in your working directory:
 
-./GNSS_StepDetection_VelocityEstimation.py
+./GNSS_CPD_VelocityEstimation_VGG.py
 
-./StepCNN-GNSS.keras
+./ChangePointCNN_VGG_V7.keras  (or another name trained on your computer)
 
 ./*.col (sample data)
 
-You may read the Python script ***GNSS_StepDetection_VelocityEstimation.py***, which is written based on the methods described in the paper. I have included detailed comments within the code for clarity. You can run the script with the sample GNSS time series (*.col) on your computer. Make sure that the CNN model (***StepCNN-GNSS.keras***) is under your working directory.
+You may read the Python script ***GNSS_CPD_VelocityEstimation_VGG.py***, which is written based on the methods described in the paper. I have included detailed comments within the code for clarity. You can run the script with the sample GNSS time series (*.col) on your computer. Make sure that the CNN model is under your working directory, or you may specify the location of the model in the program.
 
 ---
 
@@ -93,6 +80,7 @@ You may read the Python script ***GNSS_StepDetection_VelocityEstimation.py***, w
 ![final_CHI7_IGS14_neu_cm_candidate_N](https://github.com/user-attachments/assets/83d5769e-84f6-448a-b59d-37832d52cc2b)
 ![final_COTD_candidate_U](https://github.com/user-attachments/assets/8b898ab7-833f-438c-84d4-c699edc90e0c)
 ![final_FUQE_candidate_N](https://github.com/user-attachments/assets/9850ec38-0047-42a0-946d-5d612c1ff3dc)
+
 
 ***Examples of "bad" plots in training data, ./data/train/bad/***
 ![final_AGRD_candidate_N](https://github.com/user-attachments/assets/10916597-4015-4c56-abd7-3d73d5805c91)
