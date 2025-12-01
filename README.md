@@ -17,9 +17,9 @@ Estimating long-term site velocities from Global Navigation Satellite System (GN
 
 **Programs and Datasets**
 
-    ***Train_ChangePointCNN-GNSS_VGG.py***: The Python script used to train the ChangePointCNN-GNSS model from scratch using the provided dataset.
+    **Train_ChangePointCNN-GNSS_VGG.py**: The Python script used to train the ChangePointCNN-GNSS model from scratch using the provided dataset.
 
-    ***GNSS_CPD_VelocityEstimation_VGG.py***: The main implementation script for applying the trained model to new GNSS data. This script performs automated change-point detection and calculates long-term site velocities.
+    *GNSS_CPD_VelocityEstimation_VGG.py*: The main implementation script for applying the trained model to new GNSS data. This script performs automated change-point detection and calculates long-term site velocities.
     
     ***Taiwan_IGS14.tgz***: Sample files for testing GNSS_CPD_VelocityEstimation_VGG.py
 
