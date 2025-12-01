@@ -4,10 +4,9 @@ Guoquan Wang et al.
 
 gwang@uh.edu
 
+You may find this paper at:
+
 https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JH000910
-
-
-
 
 
 **Abstract**
@@ -20,7 +19,7 @@ Estimating long-term site velocities from Global Navigation Satellite System (GN
 
 This paper's programs and datasets, including a large training dataset (***data.tgz***) and a trained-CNN model (***ChangePointCNN_VGG_V7.keras***), exceed GitHub's 25 MB file size limit. These files, essential for replicating the study, are permanently archived at:
 
-https://doi.org/10.5281/zenodo.17180354
+   ***https://doi.org/10.5281/zenodo.17180354***
 
 ---
 
@@ -42,7 +41,7 @@ For installing specific version of TensorFlow, you may use (for example):
 
 ---
 
-The trained-CNN model (ChangePointCNN_VGG_V7.keras) is version-specific to TensorFlow. I strongly suggest you train the model on your computer with the trainning program (Train_ChangePointCNN-GNSS_VGG.py) and the dataset (data.tgz). Please read the detailed instruction in ***Train_ChangePointCNN-GNSS_VGG.py***
+The trained-CNN model (***ChangePointCNN_VGG_V7.keras***) is version-specific to TensorFlow. I strongly suggest you train the model on your computer with the trainning program (***Train_ChangePointCNN-GNSS_VGG.py***) and the dataset (***data.tgz***). Please read the detailed instruction inside the trainning program. 
 
 <u>***Instructions for Understanding and Retraining the CNN Model***</u>
 
