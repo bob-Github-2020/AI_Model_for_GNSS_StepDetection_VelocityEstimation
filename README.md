@@ -17,6 +17,20 @@ Estimating long-term site velocities from Global Navigation Satellite System (GN
 
 **Programs and Datasets**
 
+    Train_ChangePointCNN-GNSS_VGG.py: The Python script used to train the ChangePointCNN-GNSS model from scratch using the provided dataset.
+
+    GNSS_CPD_VelocityEstimation_VGG.py: The main implementation script for applying the trained model to new GNSS data. This script performs automated change-point detection and calculates long-term site velocities.
+
+    ChangePointCNN_VGG_V7.keras: The pre-trained Convolutional Neural Network (CNN) model, ready for immediate use in the detection framework.
+
+    data.tgz: A compressed archive containing the training dataset of approximately 6,000 labeled time series plots used to train the CNN model.
+
+    Taiwan_IGS14.tgz: Sample files for testing GNSS_CPD_VelocityEstimation_VGG.py
+
+    IGS20_Velocities_at_Global_GNSS.txt or .xls: The resulting velocity dataset for approximately 14,600 global GNSS stations, estimated using this framework in the IGS20 reference frame.
+
+    IGS20_Velocities_CNN_MIDAS.txt or .xls: A comparative dataset presenting site velocities for global GNSS stations estimated using both the ChangePointCNN method and the MIDAS method.
+ 
 This paper's programs and datasets, including a large training dataset (***data.tgz***) and a trained-CNN model (***ChangePointCNN_VGG_V7.keras***), exceed GitHub's 25 MB file size limit. These files, essential for replicating the study, are permanently archived at:
 
    ***https://doi.org/10.5281/zenodo.17180354***
